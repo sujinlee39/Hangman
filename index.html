@@ -8,45 +8,58 @@
   <title>HANGMAN</title>
 </head>
 <body>
-  <!--<header id="container"></header>
-  <h1 class="hidden">Site container</h1>
-   <section id="mainPage"><h2>Welcome to Hangman!</h2>
-    <p>To start click anywhere</p>
-  </section>-->
-
+<main>
   <h1>Hangman!</h1>
-  <section>
+
     <h4>Make a guess!</h4>
-    <p class="current-word"></p>
-    <!-- show underscares in this p tag -> this is the current word -->
-    <input type="text" class="letter-guess">
-  </section>
-  <section id=svg>
-    <svg id="hangman" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.27 624.7">
+    <svg id="hangman" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 277.31 450.46">
       <defs>
         <style>
           .cls-1 {
-            fill: none;
-            stroke: #040000;
-            stroke-miterlimit: 10;
-            stroke-width: 6px;
+            fill: #231815;
           }
 
           .cls-2 {
-            fill: #040000;
+            fill: none;
+            stroke: #231815;
+            stroke-miterlimit: 10;
+            stroke-width: 6px;
           }
         </style>
       </defs>
       <title>hangman_man</title>
-      <circle id="head" class="cls-1 wrong0" cx="130.67" cy="102.13" r="99.13"/>
-      <rect id="body" class="cls-2 wrong1" x="130.67" y="201.26" width="5.95" height="291.21"/>
-      <rect id="right_arm" class="cls-2 wrong2" x="382.14" y="302.44" width="166.91" height="6.82" transform="translate(-98.03 -228.92) rotate(23.22)"/>
-      <rect id="left_arm" class="cls-2 wrong3" x="233.2" y="330.34" width="177.01" height="7.8" transform="translate(-398.48 255.27) rotate(-45)"/>
-      <rect id="leg_left" class="cls-2 wrong4" x="253.51" y="623.1" width="168.66" height="6.97" transform="translate(-619.34 431.59) rotate(-51.56)"/>
-      <rect id="leg_right" class="cls-2 wrong5" x="370.93" y="611.19" width="168.66" height="6.97" transform="translate(173.39 1309.05) rotate(-141.56)"/>
+      <g id="gallows">
+        <rect class="cls-1" x="47.32" width="212.66" height="3.8"/>
+        <rect class="cls-1" x="47.43" y="0.63" width="3.16" height="74.85"/>
+        <rect class="cls-1" x="256.39" y="0.84" width="3.8" height="440.51"/>
+        <rect class="cls-1" x="29.99" y="441.35" width="247.32" height="9.11"/>
+      </g>
+      <g id="man">
+        <circle id="head" class="cls-1 wrong0" cx="49.01" cy="118.31" r="39.25"/>
+        <line id="leg1" class="cls-1 wrong1" x1="50.38" y1="251.13" x2="95.54" y2="307.04"/>
+        <line id="leg2" class="cls-1 wrong2" x1="51.6" y1="249.26" x2="2.49" y2="309.69"/>
+        <line id="body" class="cls-1 wrong3" x1="50.56" y1="157.55" x2="50.46" y2="253.57"/>
+        <line id="arm1" class="cls-1 wrong4" x1="53.32" y1="159.46" x2="111.73" y2="210.62"/>
+        <line id="arm2" class="cls-1 wrong5" x1="47.2" y1="160.06" x2="2.23" y2="210.07"/>
+      </g>
     </svg>
+
+  <section class="word-and-guess">
+    <p class="current-word"></p>
+    <!-- show underscares in this p tag -> this is the current word -->
+    <label for="myLetter">Enter your guess!</label>
+    <input type="text" id="myLetter" maxlength="1" class="guess" pattern="[a-zA-Z]">
+    <!--<button>Guess!</button> -->
+    <i class="worng-letter-lable">You guessed these already: </i>
+    <p class="wrong-letters"></p>
   </section>
 
+  <section class="reset-screen">
+    <h3>Game over! You ran out of guesses!</h3>
+    <button>Try Again</button>
+  </section>
+
+</main>
   <script src="js/main.js"></script>
 </body>
 </html>
