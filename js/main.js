@@ -23,7 +23,7 @@
 
   //set up the path through the app
 //inside the round brackets, check for a condition
-if (currentWord.indexOf(this.value < 0)) {
+if (currentWord.indexOf(this.value) < 0) {
   //the person chose a wrong letter, track the wrong answer
   // an index of less than 0 means the letter isn't in the word
   if (wrongGuesses >= 5){
