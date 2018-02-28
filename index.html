@@ -21,6 +21,32 @@
     <!-- show underscares in this p tag -> this is the current word -->
     <input type="text" class="letter-guess">
   </section>
+  <section id=svg>
+    <svg id="hangman" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.27 624.7">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: none;
+            stroke: #040000;
+            stroke-miterlimit: 10;
+            stroke-width: 6px;
+          }
+
+          .cls-2 {
+            fill: #040000;
+          }
+        </style>
+      </defs>
+      <title>hangman_man</title>
+      <circle id="head" class="cls-1 wrong0" cx="130.67" cy="102.13" r="99.13"/>
+      <rect id="body" class="cls-2 wrong1" x="130.67" y="201.26" width="5.95" height="291.21"/>
+      <rect id="right_arm" class="cls-2 wrong2" x="382.14" y="302.44" width="166.91" height="6.82" transform="translate(-98.03 -228.92) rotate(23.22)"/>
+      <rect id="left_arm" class="cls-2 wrong3" x="233.2" y="330.34" width="177.01" height="7.8" transform="translate(-398.48 255.27) rotate(-45)"/>
+      <rect id="leg_left" class="cls-2 wrong4" x="253.51" y="623.1" width="168.66" height="6.97" transform="translate(-619.34 431.59) rotate(-51.56)"/>
+      <rect id="leg_right" class="cls-2 wrong5" x="370.93" y="611.19" width="168.66" height="6.97" transform="translate(173.39 1309.05) rotate(-141.56)"/>
+    </svg>
+  </section>
+
   <script src="js/main.js"></script>
 </body>
 </html>
