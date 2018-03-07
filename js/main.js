@@ -80,7 +80,7 @@ else //this else mathces the if on line 40 => this will be the winning path
   wordHint.textContent = hintString.join(" ");
 
 if (correctGuesses === currentWord.length) {
-  showResetScreen("Game over! You won! Play again?");
+  showResetScreen("Game over! You won! Next level?");
 }
 
 
