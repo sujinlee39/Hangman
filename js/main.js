@@ -7,15 +7,19 @@
 //set up a variable stack
   let currentWord = null,
   wordHint = document.querySelector('.current-word'),
-  GuessBox = document.querySelector(.'guess'),
-  wrongGuesses = 0;
+  GuessBox = document.querySelector('guess'),
+  wrongGuesses = 0,
+  correctGuesses = 0,
   resetScreen = document.querySelector('.reset-screen'),
   resetButton = resetScreen.querySelector('button'),
   wrongLetters = document.querySelector('.wrong-letters'),
   wrongLetterArray = [];
 
-function showResetScreen(){
+function showResetScreen(message){
   resetScreen.classList.add('show-piece');
+
+  //grab the header tag and change it's content => replace it with the message
+  resetScreen.querySelector('h3').textContent = message;
 }
 function resetGame()
 {
@@ -27,16 +31,16 @@ function resetGame()
 }
 
  function takeGuess()
-  {
+ {
     //MDN -> 'this' keyword
     console.log(this.value);
 
     // if there's no letter, exit the game loop -> MDN 'or'
     if (this.value = "" || this.value.length < 1 )
   }
-
+let currentGuess = this.value;
   //set up the path through the app
-//inside the round brackets, check for a condition
+//inside the round brackets, check for a condition -> this if statement is the losing path / both branches
 if (currentWord.indexOf(this.value) < 0) {
 //push the wrong letter into the array
   wrongLetterArray.push(this.value);
@@ -50,7 +54,7 @@ if (currentWord.indexOf(this.value) < 0) {
     console.log('you lose, loser!');
     //show losing sceen
     // create an overlay dive with a reset button => turn it on when the user loses
-    showResetScreen();
+    showResetScreen("Game over! You ran out of guesses!");
   }
   else
   {
@@ -58,14 +62,32 @@ if (currentWord.indexOf(this.value) < 0) {
     wrongGuesses++; // this will be the last step
   }
 
-else
+else //this else mathces the if on line 40 => this will be the winning path
  {
    //the person chose a letter that matches, guess again
+   //split the current word into an array so we can check letter by letter to see where the guess matches
+  var matchAgainst = currentWord.split(""),
+  var hintString = wordHint.textContent.split(" "); //split on the characters, not the underscores
+
+   //loop through the current word and check each letter
+   matchAgainst.forEach((letter, index) => {
+     if (letter === currentGuess) {
+       hintString[index] = currentGuess;
+       correctGuesses++
+  }
+});
+  wordHint.textContent = "";
+  wordHint.textContent = hintString.join(" ");
+
+if (correctGuesses === currentWord.length) {
+  showResetScreen("Game over! You won! Play again?");
+}
+
+
 }
 //generate a random number and grab the word that corresponds to it in the word array
     var random = Math.random();
     debugger;
-  }
 
   function init()  {
     // look at MDN -> the Math object
