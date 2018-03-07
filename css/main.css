@@ -45,12 +45,31 @@ h4
   text-align: center;
 }
 
+svg
+{
+  width: 150px;
+}
+
 #container
 {
   margin: 0 auto;
 	width: 960px;
 	padding-left: 20px;
 	padding-right: 20px;
+}
+.show-piece { display: block !important; opacity: 1 !important; }
+
+.reset-screen
+{
+display: none;
+padding-top: 20%;
+opacity: 0;
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%;
+color: white;
+background-color: rgba(0, 0, 0, 0.9);
 }
 
 #mainPage
