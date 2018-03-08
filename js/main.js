@@ -8,7 +8,7 @@
 
   let currentWord = null,
   wordHint = document.querySelector('.current-word'),
-  GuessBox = document.querySelector(.'guess'),
+  GuessBox = document.querySelector('.guess'),
   wrongGuesses = 0,
   resetScreen  = document.querySelector('.reset-screen'),
   resetbutton = resetScreen.querySelector('button')
@@ -26,7 +26,7 @@ function resetGame() {
   wrongGuesses = 0;
   let gamePieces = Array.from(document.querySelectorAll('show-piece'));
   gamePieces.forEach(piece => piece.classList.remove('show-piece'));
-})
+}
 
 
   function takeGuess()
@@ -35,7 +35,7 @@ function resetGame() {
     console.log(this.value);
 
     // if there's no letter, exit the game loop -> MDN 'or'
-    if (this.value = "" || this.value.length < 1 )
+    if (this.value = "" || this.value.length < 1 ){}
   }
 
   //set up the path through the app
@@ -57,19 +57,15 @@ wrongLetters.textContent = wrongLetterArray.join (" ");
   }
 
 
-    } else {
-
-
-    // increment the wrong guess count, show a piece of the HANGMAN}
-
-    } else {
+    }  else  {
     //the person chose a letter that matches, guess again
     debugger;
     wrongGuesses++; // this will be the last step
+  }
 }
     function init() {
     // look at MDN -> the Math object
-}
+
     //generate a random number and grab the word that corresponds to it in the word array
     currentWord = words [Math.floor(Math.random()*words.length)];
     //fill the hit with underscores -> MDN string methods / attay .map methods
