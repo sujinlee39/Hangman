@@ -1,8 +1,10 @@
 (() => {
-  console.log('hangman script fired!');
+  // variables always go at the top of the files
+  var words = ["animals", "food", "music genres", "movie character", "countries", "popular movies"];
 
-  //create an array to hold the words to be guessed (MDN -> arrays, MDN const)
-  const words = ["animals", "food", "music genres", "movie character", "countries", "popular movies"];
+  let currentWord = words[Math.floor(Math.random()*words.length)],
+  wordHint = document.querySelector('.current-word'),
+  guessBox = document.querySelector('.letter-guess');
 
 //set up a variable stack
 
